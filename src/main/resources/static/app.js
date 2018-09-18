@@ -26,6 +26,7 @@ function connect() {
     });
 }
 function formSubmit() {
+    //简单的ajax表单提交，会触发服务器主动推送，跨域访问的话记得改写url
     console.log("form submit");
     $.ajax({
         url:'call_ws',
