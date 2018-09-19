@@ -18,11 +18,10 @@ public class SomeController {
     @Resource
     private SimpMessagingTemplate simpMessageSendingOperations;//消息发送模板
     @RequestMapping("/call_ws")
-    public String callWs(String name) throws Exception {
+    public Greeting callWs(String name) throws Exception {
         System.out.println("call ws,name="+name);
         Thread.sleep(1000);
         simpMessageSendingOperations.convertAndSend("/topic/greetings", new Greeting("Hello, " + HtmlUtils.htmlEscape(name) + "!"));
-        return "calling websocket";
+        return new Greeting(name+" is calling websocket");
     }
-
 }
