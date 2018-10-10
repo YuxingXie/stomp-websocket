@@ -43,4 +43,4 @@ public class SomeController {
     }
 }
 ```
-在convertAndSend方法中的第一个参数为客户端端点。
+在convertAndSend方法中的第一个参数为客户端端点。另外，上面的示例代码也是一个从服务器主动推送消息到客户端的例子。
