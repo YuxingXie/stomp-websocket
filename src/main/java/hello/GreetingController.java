@@ -13,8 +13,8 @@ import org.springframework.web.util.HtmlUtils;
 public class GreetingController {
 
 
-    @MessageMapping("/hello")//注意WebSocketConfig中配置的前缀"/app"，所以控制器匹配完整路径是/app/hello
-    @SendTo("/topic/greetings")//客户端的端点，这个在前端使用SocketJs定义
+    @MessageMapping("//app/hello")//注意WebSocketConfig中配置的前缀"/app"，所以控制器匹配完整路径是/app/hello
+//    @SendTo("/topic/greetings")//客户端的端点，这个在前端使用SocketJs定义
     public Greeting greeting(HelloMessage message) throws Exception {
         Thread.sleep(1000); // simulated delay
         Greeting ret= new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");

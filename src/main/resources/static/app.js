@@ -13,9 +13,9 @@ function setConnected(connected) {
 }
 
 function connect() {
-    //说明：如果在不跨域访问，new SockJS('/gs-guide-websocket')即可，而跨域的话使用http(s)://{ip}:{port}/gs-guide-websocket访问
+    //说明：如果在不跨域访问，new SockJS('/gs-guide-websocket')即可，而跨域的话使用ws(s)|http(s)://{ip}:{port}/gs-guide-websocket访问
     // var socket = new SockJS('/gs-guide-websocket');
-    var socket = new SockJS('/gs-guide-websocket');
+    var socket = new SockJS('ws://127.0.0.1:8080/gs-guide-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
